@@ -23,7 +23,6 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --coverage lib",
     "test:watch": "jest --watch lib",
-    "prepack": "rimraf lib/**/__tests__",
     "install": "node ./install"
   },
   "repository": {
