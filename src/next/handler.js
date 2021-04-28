@@ -31,10 +31,12 @@ export const lambdaRequestHandler = (app, handler) => {
       global.next_serverless_prefix = '';
     }
 
+    const { nextConfig = {}, renderOpts = {} } = app;
+
     // only overwrite the assets prefix if the user didn't set it or we set it previously
     if (
-      (!app.nextConfig.assetPrefix || pathPrefixes.indexOf(app.nextConfig.assetPrefix) >= 0)
-      && (!app.renderOpts.assetPrefix || pathPrefixes.indexOf(app.renderOpts.assetPrefix) >= 0)
+      (!nextConfig.assetPrefix || pathPrefixes.indexOf(nextConfig.assetPrefix) >= 0)
+      && (!renderOpts.assetPrefix || pathPrefixes.indexOf(renderOpts.assetPrefix) >= 0)
     ) {
       app.setAssetPrefix(global.next_serverless_prefix);
     }
