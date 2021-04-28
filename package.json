@@ -23,6 +23,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --coverage lib",
     "test:watch": "jest --watch lib",
+    "preinstall": "npm run build",
     "install": "node ./install"
   },
   "repository": {
